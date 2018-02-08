@@ -1,0 +1,47 @@
+from airflow.operators import ShortCircuitOperator, DummyOperator, EmailOperator
+from airflow.models import DAG
+import airflow.utils
+from datetime import datetime, timedelta
+
+seven_days_ago = datetime.combine(datetime.today() - timedelta(7),
+                                  datetime.min.time())
+args = {
+    'owner': 'airflow',
+    'start_date': seven_days_ago,
+}
+
+dag = DAG(dag_id='example_short_circuit_operator', default_args=args)
+
+cond_true = ShortCircuitOperator(
+    task_id='condition_is_True', python_callable=lambda: True, dag=dag)
+
+cond_false = ShortCircuitOperator(
+    task_id='condition_is_False', python_callable=lambda: False, dag=dag)
+
+email_true = EmailOperator(
+task_id='email_true',
+to='vijay.datla@clairvoyantsoft.com', 
+subject='Test Mail True',
+html_content= 'Test mail 1',
+dag=dag
+)
+
+email_false = EmailOperator(
+task_id='email_false',
+to='vijay.datla@clairvoyantsoft.com',
+subject='Test Mail False',
+html_content= 'Test mail 1',
+dag=dag
+)
+
+dummy = DummyOperator(task_id='FilePull, dag=dag)
+
+ds_true = [DummyOperator(task_id='true_' + str(i), dag=dag) for i in [1, 2]]
+ds_false = [DummyOperator(task_id='false_' + str(i), dag=dag) for i in [1, 2]]
+
+cond_true.set_upstream(dummy)
+cond_false.set_upstream(dummy)
+
+
+
+

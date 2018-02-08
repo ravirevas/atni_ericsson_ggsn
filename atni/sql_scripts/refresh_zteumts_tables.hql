@@ -1,0 +1,27 @@
+INVALIDATE METADATA commnet.outgatewayrecord;
+INVALIDATE METADATA commnet.commonequipmentrecord;
+INVALIDATE METADATA commnet.mocallrecord;
+INVALIDATE METADATA commnet.ussdrecord;
+INVALIDATE METADATA commnet.mtlcsrecord;
+INVALIDATE METADATA commnet.incgatewayrecord;
+INVALIDATE METADATA commnet.ssactionrecord;
+INVALIDATE METADATA commnet.mosmsrecord;
+INVALIDATE METADATA commnet.mtsmsrecord;
+INVALIDATE METADATA commnet.mtcallrecord;
+INVALIDATE METADATA commnet.mcfcallrecord;
+INVALIDATE METADATA commnet.gsicphrecord;
+INVALIDATE METADATA commnet.hlrintrecord;
+INVALIDATE METADATA commnet.molcsrecord;
+INVALIDATE METADATA commnet.mtrfrecord;
+INVALIDATE METADATA commnet.ncscphrecord;
+INVALIDATE METADATA commnet.nilcsrecord;
+INVALIDATE METADATA commnet.vigrecord;
+INVALIDATE METADATA commnet.mcfcphrecord;
+INVALIDATE METADATA commnet.tcicphrecord;
+INVALIDATE METADATA commnet.mscsrvccrecord;
+INVALIDATE METADATA commnet.roamrecord;
+INVALIDATE METADATA commnet.mocphrecord;
+INVALIDATE METADATA commnet.moecallrecord;
+INVALIDATE METADATA commnet.termcamelintrecord;
+INVALIDATE METADATA commnet.zteumts_stats;
+

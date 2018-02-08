@@ -1,0 +1,17 @@
+The shell scripts in this directory can be used to start the airflow services and shutdown the same if required.
+
+Below script can be used to start the airflow services.
+
+	sh ./start_servers.sh
+
+Below scripts can be used for shutting down the services.
+
+	sh ./shutdown-celery.sh  
+	sh ./shutdown-scheduler.sh  
+	sh ./shutdown-webserver.sh
+
+Instead of shutting down one service at a time, you can try running the below command.
+
+	sh ./shutdown-servers.sh <AIRFLOW_HOME/bin>
+
+
